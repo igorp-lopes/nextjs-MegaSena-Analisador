@@ -3,7 +3,7 @@ import React from 'react';
 export default function DataTable() {
   return (
     <div className=" right col s6">
-      <table>
+      <table className="highlight centered">
         <thead>
           <tr>
             <th>Name</th>
