@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import DataTable from './components/DataTable/DataTable';
+import DataTable1 from './components/DataTable/DataTable1';
+import DataTable2 from './components/DataTable/DataTable2';
 import AnalisysSelectors from './components/Selectors/AnalisysSelectors';
 
 export default function App() {
@@ -8,7 +9,6 @@ export default function App() {
   const [selectedRadio, setSelectedRadio] = useState('');
 
   const handleRadioChange = (event) => {
-    console.log(`Estado 'selectedRadio': ${event.target.value}`);
     setSelectedRadio(event.target.value);
   };
 
@@ -20,7 +20,8 @@ export default function App() {
           selectedRadio={selectedRadio}
           onChangeRadio={handleRadioChange}
         ></AnalisysSelectors>
-        <DataTable></DataTable>
+        {selectedRadio === 'RecurrencySelector' && <DataTable1></DataTable1>}
+        {selectedRadio === 'DateSelector' && <DataTable2></DataTable2>}
       </div>
     </div>
   );

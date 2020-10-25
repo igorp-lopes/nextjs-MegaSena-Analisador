@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function DataTable() {
+export default function DataTable1() {
   return (
     <div className=" right col s6">
       <table className="highlight centered">
