@@ -1,12 +1,15 @@
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Datetime from "react-datetime";
+import moment from "moment";
 
-import React from "react";
 
 export default function DateSelector() {
   return (
-    <Container>
-      <Datetime></Datetime>
-    </Container>
+    <Datetime
+      dateFormat={"D/MM/YYYY"}
+      timeFormat={false}
+      initialValue={moment()}
+    ></Datetime>
   );
 }
