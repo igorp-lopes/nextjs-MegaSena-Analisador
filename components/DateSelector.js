@@ -1,15 +1,19 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Datetime from "react-datetime";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 
-
 export default function DateSelector() {
+  const [date, setDate] = useState(new Date());
+
   return (
-    <Datetime
-      dateFormat={"D/MM/YYYY"}
-      timeFormat={false}
-      initialValue={moment()}
-    ></Datetime>
+    <DatePicker
+      selected={date}
+      onChange={(selectedDate) => {
+        console.log(selectedDate);
+        debugger;
+        setDate(selectedDate);
+      }}
+    ></DatePicker>
   );
 }

@@ -8,16 +8,18 @@ import Col from "react-bootstrap/Col";
 
 export default function Home() {
   return (
-    <Container>
-      <h1>Analisador de resultados da Mega-Sena</h1>
-      <Row>
-        <Col sm={4}>
-          <DateSelector></DateSelector>
-        </Col>
-        <Col>
-          <p>Teste</p>
-        </Col>
-      </Row>
-    </Container>
+    <div>
+      <Container>
+        <h1>Analisador de resultados da Mega-Sena</h1>
+        <Row>
+          <Col sm={4}>
+            <DateSelector></DateSelector>
+          </Col>
+          <Col>
+            <p>Teste</p>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
