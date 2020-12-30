@@ -27,16 +27,7 @@ export default function Home() {
               </div>
             </Col>
           </Row>
-          <Row>
-            <Col>
-              <br />
-              <p>{date.toLocaleDateString()}</p>
-              <RadioSelectors
-                selectedRadio={selectedRadio}
-                setSelectedRadio={setSelectedRadio}
-              ></RadioSelectors>
-            </Col>
-          </Row>
+          <br></br>
           <Row>
             <Col>
               <AnalysisAccordion></AnalysisAccordion>
