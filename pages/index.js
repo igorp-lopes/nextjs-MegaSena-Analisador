@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import React, { useState } from "react";
 import DateSelector from "../components/DateSelector";
 import RadioSelectors from "../components/RadioSelectors.js";
+import AnalysisAccordion from "../components/AnalysisAccordion";
 
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -34,6 +35,11 @@ export default function Home() {
                 selectedRadio={selectedRadio}
                 setSelectedRadio={setSelectedRadio}
               ></RadioSelectors>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <AnalysisAccordion></AnalysisAccordion>
             </Col>
           </Row>
         </Jumbotron>
