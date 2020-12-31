@@ -22,11 +22,29 @@ function TableHeader({ tableData }) {
   );
 }
 
+function getTableBody(tableData) {
+  const tableKeys = getKeys(tableData[0]);
+
+  return tableData.map((data, index) => {
+    return (
+      <tr key={index}>
+        <td>{data[tableKeys[0]]}</td>
+        <td>{data[tableKeys[1]]}</td>
+      </tr>
+    );
+  });
+}
+
+function TableBody({ tableData }) {
+  return <tbody>{getTableBody(tableData)}</tbody>;
+}
+
 function DataTable({ tableData }) {
   return (
     <div>
       <Table responsive>
         <TableHeader tableData={tableData}></TableHeader>
+        <TableBody tableData={tableData}></TableBody>
       </Table>
     </div>
   );
