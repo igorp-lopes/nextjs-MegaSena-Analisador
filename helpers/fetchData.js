@@ -5,7 +5,7 @@ async function fetchAPIData(url) {
 }
 
 export async function fetchOccurrences() {
-  const url = "localhost:8000/recurrence";
+  const url = "http://localhost:8000/occurrences";
 
   const occurrencesJson = await fetchAPIData(url);
 
@@ -13,7 +13,7 @@ export async function fetchOccurrences() {
 }
 
 export async function fetchEarliest() {
-  const url = "localhost:8000/dates/earliest";
+  const url = "http://localhost:8000/dates/earliest";
 
   const earliestJson = await fetchAPIData(url);
 
@@ -21,7 +21,7 @@ export async function fetchEarliest() {
 }
 
 export async function fetchOldest() {
-  const url = "localhost:8000/dates/oldest";
+  const url = "http://localhost:8000/dates/oldest";
 
   const oldestJson = await fetchAPIData(url);
 
