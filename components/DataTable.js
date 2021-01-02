@@ -1,5 +1,5 @@
 import { func } from "prop-types";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 
 function getKeys(tableRow) {
@@ -39,13 +39,27 @@ function TableBody({ tableData }) {
   return <tbody>{getTableBody(tableData)}</tbody>;
 }
 
-function DataTable({ tableData }) {
+function DataTable({ dataFetcher }) {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const jsonData = await dataFetcher();
+      console.log(jsonData);
+      setData(jsonData);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
-      <Table responsive>
-        <TableHeader tableData={tableData}></TableHeader>
-        <TableBody tableData={tableData}></TableBody>
-      </Table>
+      {data && (
+        <Table responsive>
+          <TableHeader tableData={data}></TableHeader>
+          <TableBody tableData={data}></TableBody>
+        </Table>
+      )}
     </div>
   );
 }

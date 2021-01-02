@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import DataTable from "../components/DataTable";
 
-function AnalysisCard({ category, eventKey, tableData }) {
+function AnalysisCard({ category, eventKey, dataFetcher }) {
   return (
     <Card>
       <Card.Header>
@@ -14,7 +14,7 @@ function AnalysisCard({ category, eventKey, tableData }) {
       </Card.Header>
       <Accordion.Collapse eventKey={eventKey}>
         <Card.Body>
-          <DataTable tableData={tableData}></DataTable>
+          <DataTable dataFetcher={dataFetcher}></DataTable>
         </Card.Body>
       </Accordion.Collapse>
     </Card>
