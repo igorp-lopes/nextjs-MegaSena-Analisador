@@ -16,9 +16,13 @@ export default function Home() {
 
   return (
     <div>
-      <Container>
+      <Container fluid>
         <Jumbotron>
-          <h1>Analisador de resultados da Mega-Sena</h1>
+          <Row>
+            <Col>
+              <h1>Analisador de resultados da Mega-Sena</h1>
+            </Col>
+          </Row>
           <Row>
             <Col>
               <div>
