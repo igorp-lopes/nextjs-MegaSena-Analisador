@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import DateSelector from "../components/DateSelector";
 import RadioSelectors from "../components/RadioSelectors.js";
 import AnalysisAccordion from "../components/AnalysisAccordion";
+import TogglingButton from "../components/TogglingButton";
 
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -12,7 +13,7 @@ import Col from "react-bootstrap/Col";
 
 export default function Home() {
   const [date, setDate] = useState(new Date());
-  const [selectedRadio, setSelectedRadio] = useState();
+  const [toggled, setToggled] = useState(false);
 
   return (
     <div>
@@ -21,14 +22,24 @@ export default function Home() {
           <Row>
             <Col>
               <h1>Analisador de resultados da Mega-Sena</h1>
+              <br></br>
             </Col>
           </Row>
           <Row>
             <Col>
-              <div>
-                <p>Selecione a data inicial para considerar o filtro</p>
-                <DateSelector date={date} setDate={setDate}></DateSelector>
-              </div>
+              <TogglingButton
+                text='Selecionar data para iniciar a análise por'
+                toggled={toggled}
+                setToggled={setToggled}
+              ></TogglingButton>
+              {toggled ? (
+                <div> 
+                  <p>Selecione a data inicial para considerar o filtro</p>
+                  <DateSelector date={date} setDate={setDate}></DateSelector>
+                </div>
+              ) : (
+                <div></div>
+              )}
             </Col>
           </Row>
           <br></br>
