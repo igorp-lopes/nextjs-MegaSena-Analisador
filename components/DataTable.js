@@ -49,7 +49,7 @@ function DataTable({ dataFetcher, date }) {
     };
 
     fetchData();
-  }, []);
+  }, [date]);
 
   var outputTable;
 
