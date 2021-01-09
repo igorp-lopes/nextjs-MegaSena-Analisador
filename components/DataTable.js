@@ -1,5 +1,5 @@
-import { func } from "prop-types";
 import React, { useState, useEffect } from "react";
+import Spinner from "react-bootstrap/Spinner";
 import Table from "react-bootstrap/Table";
 
 function getKeys(tableRow) {
@@ -45,7 +45,6 @@ function DataTable({ dataFetcher }) {
   useEffect(() => {
     const fetchData = async () => {
       const jsonData = await dataFetcher();
-      console.log(jsonData);
       setData(jsonData);
     };
 
@@ -54,11 +53,15 @@ function DataTable({ dataFetcher }) {
 
   return (
     <div>
-      {data && (
+      {data ? (
         <Table responsive>
           <TableHeader tableData={data}></TableHeader>
           <TableBody tableData={data}></TableBody>
         </Table>
+      ) : (
+        <Spinner animation='border' role='status'>
+          <span className='sr-only'>Carregando...</span>
+        </Spinner>
       )}
     </div>
   );
