@@ -33,7 +33,9 @@ function AnalysisCard({
       </Card.Header>
       <Accordion.Collapse eventKey={eventKey}>
         <Card.Body>
-          <DataTable dataFetcher={dataFetcher}></DataTable>
+          {activeKey === eventKey && (
+            <DataTable dataFetcher={dataFetcher}></DataTable>
+          )}
         </Card.Body>
       </Accordion.Collapse>
     </Card>
