@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+
 import DataTable from "../components/DataTable";
 
 function AnalysisCard({
   category,
   eventKey,
   dataFetcher,
+  date,
   activeKey,
   setActiveKey,
 }) {
@@ -34,7 +36,7 @@ function AnalysisCard({
       <Accordion.Collapse eventKey={eventKey}>
         <Card.Body>
           {activeKey === eventKey && (
-            <DataTable dataFetcher={dataFetcher}></DataTable>
+            <DataTable dataFetcher={dataFetcher} date={date}></DataTable>
           )}
         </Card.Body>
       </Accordion.Collapse>

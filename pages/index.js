@@ -45,7 +45,9 @@ export default function Home() {
           <br></br>
           <Row>
             <Col>
-              <AnalysisAccordion></AnalysisAccordion>
+              <AnalysisAccordion
+                date={toggled && date.toLocaleDateString()}
+              ></AnalysisAccordion>
             </Col>
           </Row>
         </Jumbotron>

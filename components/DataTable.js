@@ -39,32 +39,43 @@ function TableBody({ tableData }) {
   return <tbody>{getTableBody(tableData)}</tbody>;
 }
 
-function DataTable({ dataFetcher }) {
+function DataTable({ dataFetcher, date }) {
   const [data, setData] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
-      const jsonData = await dataFetcher();
+      const jsonData = await dataFetcher(date);
       setData(jsonData);
     };
 
     fetchData();
   }, []);
 
-  return (
-    <div>
-      {data ? (
-        <Table responsive>
-          <TableHeader tableData={data}></TableHeader>
-          <TableBody tableData={data}></TableBody>
-        </Table>
-      ) : (
-        <Spinner animation='border' role='status'>
-          <span className='sr-only'>Carregando...</span>
-        </Spinner>
-      )}
-    </div>
-  );
+  var outputTable;
+
+  // If the data from the API hasn't been loaded yet
+  if (!data) {
+    outputTable = (
+      <Spinner animation='border' role='status'>
+        <span className='sr-only'>Carregando...</span>
+      </Spinner>
+    );
+  }
+  // If the data returned from the API is empty
+  else if (!data.length) {
+    outputTable = <span>Sem dados a serem visualizados</span>;
+  }
+  // When the data is loaded
+  else {
+    outputTable = (
+      <Table responsive>
+        <TableHeader tableData={data}></TableHeader>
+        <TableBody tableData={data}></TableBody>
+      </Table>
+    );
+  }
+
+  return (outputTable);
 }
 
 export default DataTable;

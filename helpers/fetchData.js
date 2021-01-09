@@ -4,11 +4,13 @@ async function fetchAPIData(url) {
   return jsonData;
 }
 
-export async function fetchOccurrences(query) {
-  const url = "http://localhost:8000/occurrences";
+export async function fetchOccurrences(startDate) {
+  var url = "http://localhost:8000/occurrences";
 
-  if (query) {
-    url += '?startDate=' + query
+  if (startDate) {
+    // We adjust the date format for the get request
+    startDate = startDate.replaceAll('/', '-')
+    url += '?startDate=' + startDate
   }
 
   const occurrencesJson = await fetchAPIData(url);
@@ -16,11 +18,13 @@ export async function fetchOccurrences(query) {
   return occurrencesJson;
 }
 
-export async function fetchEarliest(query) {
-  const url = "http://localhost:8000/dates/earliest";
+export async function fetchEarliest(startDate) {
+  var url = "http://localhost:8000/dates/earliest";
 
-  if (query) {
-    url += '?startDate=' + query
+  if (startDate) {
+    // We adjust the date format for the get request
+    startDate = startDate.replaceAll('/', '-')
+    url += '?startDate=' + startDate
   }
 
   const earliestJson = await fetchAPIData(url);
@@ -28,11 +32,13 @@ export async function fetchEarliest(query) {
   return earliestJson;
 }
 
-export async function fetchOldest(query) {
-  const url = "http://localhost:8000/dates/oldest";
+export async function fetchOldest(startDate) {
+  var url = "http://localhost:8000/dates/oldest";
 
-  if (query) {
-    url += '?startDate=' + query
+  if (startDate) {
+    // We adjust the date format for the get request
+    startDate = startDate.replaceAll('/', '-')
+    url += '?startDate=' + startDate
   }
 
   const oldestJson = await fetchAPIData(url);
