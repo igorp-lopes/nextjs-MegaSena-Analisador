@@ -28,13 +28,13 @@ export default function Home() {
           <Row>
             <Col>
               <TogglingButton
-                text=' Selecionar data para iniciar a análise por'
+                text='Filtrar as análises a partir de uma data específica'
                 toggled={toggled}
                 setToggled={setToggled}
               ></TogglingButton>
               {toggled ? (
                 <div>
-                  <p>Selecione a data inicial para considerar o filtro</p>
+                  <p> Selecione uma data para o filtro</p>
                   <DateSelector date={date} setDate={setDate}></DateSelector>
                 </div>
               ) : (

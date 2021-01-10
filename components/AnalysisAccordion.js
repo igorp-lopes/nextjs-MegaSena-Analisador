@@ -12,7 +12,7 @@ export default function AnalysisAccordion({ date }) {
   return (
     <Accordion>
       <AnalysisCard
-        category='Ordenar pelo total de Ocorrências'
+        category='Total de vezes em que cada dezena foi sorteada'
         eventKey='0'
         dataFetcher={fetchOccurrences}
         date={date}
@@ -20,7 +20,7 @@ export default function AnalysisAccordion({ date }) {
         setActiveKey={setActiveKey}
       ></AnalysisCard>
       <AnalysisCard
-        category='Ordenar pela data mais recente de sorteio'
+        category='Data mais recente em que cada dezena foi sorteada'
         eventKey='1'
         dataFetcher={fetchEarliest}
         date={date}
@@ -28,7 +28,7 @@ export default function AnalysisAccordion({ date }) {
         setActiveKey={setActiveKey}
       ></AnalysisCard>
       <AnalysisCard
-        category='Ordenar pela data mais antiga de sorteio'
+        category='Data mais antiga em que cada dezena foi sorteada'
         eventKey='2'
         dataFetcher={fetchOldest}
         date={date}
