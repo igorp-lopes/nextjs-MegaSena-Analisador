@@ -1,3 +1,6 @@
+import useSWR from "swr";
+
+
 function sortJsonByDate(json, ascending) {
   var sortingFunction;
   if (ascending) {
@@ -26,7 +29,7 @@ async function fetchAPIData(url) {
 }
 
 export async function fetchOccurrences(startDate) {
-  var url = "http://localhost:8000/occurrences";
+  var url = process.env.NEXT_PUBLIC_APIURL + "/occurrences";
 
   if (startDate) {
     // We adjust the date format for the get request
@@ -44,7 +47,7 @@ export async function fetchOccurrences(startDate) {
 }
 
 export async function fetchEarliest(startDate) {
-  var url = "http://localhost:8000/dates/earliest";
+  var url = process.env.NEXT_PUBLIC_APIURL + "/dates/earliest";
 
   if (startDate) {
     // We adjust the date format for the get request
@@ -60,7 +63,7 @@ export async function fetchEarliest(startDate) {
 }
 
 export async function fetchOldest(startDate) {
-  var url = "http://localhost:8000/dates/oldest";
+  var url = process.env.NEXT_PUBLIC_APIURL + "/dates/oldest";
 
   if (startDate) {
     // We adjust the date format for the get request
