@@ -1,6 +1,6 @@
 # Analisador de Resultados da Mega-Sena - Versão 0.5 beta
 
-Aplicação web que informa análises feitas com base nos dados disponíveis a respeito dos sorteios da loteria Mega-Sena
+Aplicação web feita com a framework Next.js que informa análises feitas com base nos dados disponíveis a respeito dos sorteios da loteria Mega-Sena
 
 O site está hospedado na Vercel e disponível para uso [aqui](https://nextjs-mega-sena-analisador.vercel.app).
 
