@@ -1,34 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Analisador de Resultados da Mega-Sena - Versão 0.5 beta
 
-## Getting Started
+Aplicação web que informa análises feitas com base nos dados disponíveis a respeito dos sorteios da loteria Mega-Sena
 
-First, run the development server:
+O site está hospedado na Vercel e disponível para uso [aqui](https://nextjs-mega-sena-analisador.vercel.app).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Essa aplicação web faz parte de um projeto pessoal, sendo a parte do front-end de uma aplicação web a qual recebe de uma API (disponível neste [repositório do github](https://github.com/igorp-lopes/API-MegaSena-Analisador)) as análises feitas em cima de uma base de dados com informações de todos os resultados extraida do site oficial da Caixa. O projeto ainda se encontra em um estágio inicial e muitas melhorias e novas funcionalidades estão planejadas para o futuro.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## A ser feito
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] Melhorias na interface e diagramação dos elementos
+- [ ] Inserir um footer informativo
+- [ ] Adicionar a possibilidade de alterar a ordenação dos elementos das tabelas
