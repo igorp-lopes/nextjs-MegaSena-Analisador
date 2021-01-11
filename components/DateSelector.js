@@ -1,11 +1,19 @@
-import Datetime from "react-datetime";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import Button from "react-bootstrap/Button";
 
-import React from "react";
-
-export default function DateSelector() {
+export default function DateSelector({ date, setDate }) {
   return (
-    <div>
-      <Datetime></Datetime>
-    </div>
+    <DatePicker
+      selected={date}
+      dateFormat={"dd/MM/yyyy"}
+      customInput={
+        <Button variant='primary'>{date.toLocaleDateString()}</Button>
+      }
+      onChange={(selectedDate) => {
+        setDate(selectedDate);
+      }}
+    ></DatePicker>
   );
 }
