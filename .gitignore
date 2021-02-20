@@ -117,3 +117,9 @@ dist
 
 # Vscode files
 .vscode
+
+# Next.js files
+next.config.js
+
+# Local environment variables
+.env.local
