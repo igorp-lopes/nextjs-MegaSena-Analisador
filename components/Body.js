@@ -18,12 +18,6 @@ function Body() {
         <Jumbotron>
           <Row>
             <Col>
-              <h1>Analisador de resultados da Mega-Sena</h1>
-              <br></br>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
               <TogglingButton
                 text='Filtrar as análises a partir de uma data específica'
                 toggled={toggled}
