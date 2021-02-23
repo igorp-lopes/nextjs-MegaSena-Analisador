@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import Table from "react-bootstrap/Table";
 
@@ -39,18 +39,7 @@ function TableBody({ tableData }) {
   return <tbody>{getTableBody(tableData)}</tbody>;
 }
 
-function DataTable({ dataFetcher, date }) {
-  const [data, setData] = useState();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const jsonData = await dataFetcher(date);
-      setData(jsonData);
-    };
-
-    fetchData();
-  }, [date]);
-
+function DataTable({ data }) {
   var outputTable;
 
   // If the data from the API hasn't been loaded yet
@@ -75,7 +64,7 @@ function DataTable({ dataFetcher, date }) {
     );
   }
 
-  return (outputTable);
+  return outputTable;
 }
 
 export default DataTable;
