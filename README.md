@@ -1,4 +1,4 @@
-# Analisador de Resultados da Mega-Sena - Versão 0.5 beta
+# Analisador de Resultados da Mega-Sena - Versão 0.5.1 beta
 
 Aplicação web feita com a framework Next.js que informa análises feitas com base nos dados disponíveis a respeito dos sorteios da loteria Mega-Sena
 
