@@ -14,35 +14,33 @@ function Body() {
 
   return (
     <div>
-      <Container fluid>
-        <Jumbotron>
-          <Row>
-            <Col>
-              <TogglingButton
-                text='Filtrar as análises a partir de uma data específica'
-                toggled={toggled}
-                setToggled={setToggled}
-              ></TogglingButton>
-              {toggled ? (
-                <div>
-                  <p> Selecione uma data para o filtro</p>
-                  <DateSelector date={date} setDate={setDate}></DateSelector>
-                </div>
-              ) : (
-                <div></div>
-              )}
-            </Col>
-          </Row>
-          <br></br>
-          <Row>
-            <Col>
-              <AnalysisAccordion
-                date={toggled && date.toLocaleDateString()}
-              ></AnalysisAccordion>
-            </Col>
-          </Row>
-        </Jumbotron>
-      </Container>
+      <Row>
+        <Col>
+          <TogglingButton
+            text='Filtrar as análises a partir de uma data específica'
+            toggled={toggled}
+            setToggled={setToggled}
+          ></TogglingButton>
+          {toggled ? (
+            <div>
+              <p> Selecione uma data para o filtro</p>
+              <DateSelector date={date} setDate={setDate}></DateSelector>
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </Col>
+      </Row>
+      <br></br>
+      <Jumbotron>
+        <Row>
+          <Col>
+            <AnalysisAccordion
+              date={toggled && date.toLocaleDateString()}
+            ></AnalysisAccordion>
+          </Col>
+        </Row>
+      </Jumbotron>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 import { useAccordionToggle } from "react-bootstrap/AccordionToggle";
 
@@ -37,28 +38,30 @@ export default function AnalysisAccordion({ date }) {
   }, [date]);
 
   return (
-    <Accordion>
-      <AnalysisCard
-        category='Total de vezes em que cada dezena foi sorteada'
-        eventKey='0'
-        tableData={dataOccurrences}
-        activeKey={activeKey}
-        setActiveKey={setActiveKey}
-      ></AnalysisCard>
-      <AnalysisCard
-        category='Data última vez em que cada dezena foi sorteada'
-        eventKey='1'
-        tableData={dataEarliestDate}
-        activeKey={activeKey}
-        setActiveKey={setActiveKey}
-      ></AnalysisCard>
-      <AnalysisCard
-        category='Data da primeira vez em que cada dezena foi sorteada'
-        eventKey='2'
-        tableData={dataOldestDate}
-        activeKey={activeKey}
-        setActiveKey={setActiveKey}
-      ></AnalysisCard>
-    </Accordion>
+    <Container>
+      <Accordion>
+        <AnalysisCard
+          category='Total de vezes em que cada dezena foi sorteada'
+          eventKey='0'
+          tableData={dataOccurrences}
+          activeKey={activeKey}
+          setActiveKey={setActiveKey}
+        ></AnalysisCard>
+        <AnalysisCard
+          category='Data última vez em que cada dezena foi sorteada'
+          eventKey='1'
+          tableData={dataEarliestDate}
+          activeKey={activeKey}
+          setActiveKey={setActiveKey}
+        ></AnalysisCard>
+        <AnalysisCard
+          category='Data da primeira vez em que cada dezena foi sorteada'
+          eventKey='2'
+          tableData={dataOldestDate}
+          activeKey={activeKey}
+          setActiveKey={setActiveKey}
+        ></AnalysisCard>
+      </Accordion>
+    </Container>
   );
 }
