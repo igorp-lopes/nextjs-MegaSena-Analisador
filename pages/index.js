@@ -10,15 +10,6 @@ export default function Home() {
       <Head>
         <title>Analisador da Mega Sena</title>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        <meta name='author' content='Igor Peterossi Lopes'></meta>
-        <meta
-          name='description'
-          content='Analisador de resultados da loteria da Mega Sena'
-        ></meta>
-        <meta
-          name='keywords'
-          content='Mega, Sena, Loteria, Análise, Analisador'
-        ></meta>
       </Head>
       <Header></Header>
       <Body></Body>
